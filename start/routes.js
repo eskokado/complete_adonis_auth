@@ -17,3 +17,6 @@
 const Route = use('Route')
 
 Route.on('/').render('welcome')
+
+Route.get('register', 'Auth/RegisterController.showRegisterForm')
+Route.post('register', 'Auth/RegisterController.register').as('register')
