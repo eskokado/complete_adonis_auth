@@ -16,7 +16,7 @@ class LoginController {
     const user = await User.query()
       .where('email', email)
       .where('is_active', true)
-      .first()
+      .fetch()
 
     if (user) {
       // verify password
