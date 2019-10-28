@@ -13,10 +13,7 @@ class LoginController {
     const { email, password, remember } = request.all()
 
     // retrieve user base on the form data
-    const user = await User.query()
-      .where('email', email)
-      .where('is_active', true)
-      .fetch()
+    const user = await User.findBy('email', email, 'is_active', true)
 
     if (user) {
       // verify password
