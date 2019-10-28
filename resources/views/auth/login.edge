@@ -1,0 +1,54 @@
+@layout('layout.app')
+
+@section('content')
+  <div class="columns">
+    <div class="column is-4 is-offset-4">
+      <h2 class="title has-text-centered">Login</h2>
+
+      @include('includes.notification')
+
+      <form action="{{ route('login') }}" method="post">
+        {{ csrfField() }}
+
+        <div class="field">
+          <label for="email" class="label">Email</label>
+
+          <div class="control">
+            <input
+              type="email"
+              class="input"
+              name="email"
+              id="email"
+            >
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="password" class="label">Password</label>
+
+          <div class="control">
+            <input
+              type="password"
+              class="input"
+              name="password"
+              id="password"
+            >
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="" class="checkbox">
+            <input type="checkbox" name="remember">
+            Remember me
+          </label>
+        </div>
+
+        <div class="control">
+          <button type="submit" class="button is-dark is-fullwidth is-uppercase">Login</button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+@endsection
